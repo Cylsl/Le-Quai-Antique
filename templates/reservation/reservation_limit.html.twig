@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation impossible - Le Quai Antique{% endblock %}
+
+{% block content %}
+    <h2>Réservation impossible</h2>
+    <br/>
+      {% if reservation.user is not null %}
+    <p>
+    Bonjour <strong>{{reservation.user.firstname}} {{reservation.user.lastname}}</strong>,<br/><br/>
+    Nous sommes beaucoup trop délicieux de ce fait il est impossible de réserver pour le moment. <br/>
+    Vous pouvez nous contacter par téléphone pour que nous puissions trouver une solution, il ne sera pas possible de manger dans les toilettes je vous rassure. Vous pouvez retrouver nos informations de contact <a href=" {{path ('app_contact')}}">ici</a>. <br/><br/>
+    Nous espérons quand même vous voir très bientôt !
+    </p>
+    <br/>
+    {% else %}
+
+    <p>
+    Bonjour,<br/><br/>
+    Nous sommes beaucoup trop délicieux de ce fait il est impossible de réserver pour le moment. <br/>
+    Vous pouvez nous contacter par téléphone pour que nous puissions trouver une solution, il ne sera pas possible de manger dans les toilettes je vous rassure. Vous pouvez retrouver nos informations de contact <a href=" {{path ('app_contact')}}">ici</a>. <br/><br/>
+    Nous espérons quand même vous voir très bientôt !
+    </p>
+{% endif %}
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+{% endblock %}

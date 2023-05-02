@@ -1,0 +1,32 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation - Le Quai Antique{% endblock %}
+
+{% block content %}
+    <h1>Réservez une table</h1>
+
+    </br>
+    </br>
+
+    {{ form_start(form) }}
+        {% for message in app.flashes('notice') %}
+    <div class="alert alert-info"> {{ message }}</div>
+    {% endfor %}
+
+    {{ form_row(form.lastname) }}
+    {{ form_row(form.firstname) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.phone) }}
+    {{ form_row(form.guests) }}
+    {{ form_row(form.date) }}
+    {{ form_row(form.time) }}
+    {{ form_row(form.allergies) }}
+    {{ form_row(form.content) }}
+
+    <br/>
+
+    {{ form_widget(form.submit) }}
+
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation de réservation - Le Quai Antique{% endblock %}
+
+{% block content %}
+    <h2>Confirmation de réservation</h2>
+    <br/>
+          {% if reservation.user is not null %}
+    <p>
+    Bonjour <strong>{{reservation.user.firstname}} {{reservation.user.lastname}}</strong>,<br/><br/>
+    Nous vous remercions pour votre réservation. <br/>
+    Une confirmation vient de vous être envoyée par mail à l'adresse <strong>{{reservation.user.email}}</strong>.
+    <hr>
+    Pour voir vos réservations, rendez-vous dans votre <a href=" {{path ('app_account_reservation')}}">compte</a>.
+    </p>
+        {% else %}
+            <p>
+            Bonjour, <br/><br/>
+            Nous vous remercions pour votre réservation. Un mail de confirmation vient de vous être envoyé. <br/><br/>
+            Nous avons hâte de vous retrouver au Quai Antique !
+
+            </p>
+            {% endif %}
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+{% endblock %}

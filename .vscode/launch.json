@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch via CLI",
+      "type": "php",
+      "request": "launch",
+      "runtimeExecutable": "D:\\xampp\\php\\php.exe",
+      "program": "${workspaceFolder}/bin/console",
+      "args": [
+        "server:run"
+      ],
+      "env": {},
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "externalConsole": false
+    }
+  ]
+}

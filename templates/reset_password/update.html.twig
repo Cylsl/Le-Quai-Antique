@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mot de passe oublié - Le Quai Antique{% endblock %}
+
+{% block content %}
+<br/>
+    <h1 class="h3 mb-3 font-weight-normal">Réinitialiser mon mot de passe</h1>
+{% for message in app.flashes('notice') %}
+    <div class="alert alert-info"> {{ message }}</div>
+{% endfor %}
+{% for message in app.flashes('notice') %}
+    <div class="alert alert-info"> {{ message }}</div>
+{% endfor %}
+
+<div>
+
+<br/>
+
+{{ form(form) }}
+
+</div>
+
+{% endblock %}

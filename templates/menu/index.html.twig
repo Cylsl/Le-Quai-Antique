@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notre carte - Le Quai Antique{% endblock %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-3">
+
+    <h3>Filtrer</h3>
+
+    {{ form(form) }}
+
+  </div>
+
+
+  <div class="col-md-9">
+    <h3>Notre carte</h3>
+      <div class="row product-container">
+        {% for product in menu %}
+          <div class="col-md-6">
+            {% include 'menu/single_product.html.twig' %}
+          </div>
+        {% endfor %}
+      </div>
+  </div>
+</div>
+{% endblock %}
+

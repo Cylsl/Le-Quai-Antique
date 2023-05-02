@@ -1,0 +1,9 @@
+            
+            <link href="{{ asset ('/assets/css/home6.css') }}" rel="stylesheet">
+            
+            <div class="product-item text-center">
+              <img src="/uploads/images/products/{{product.illustration}}" alt="{{ product.name }}" class="img-fluid">
+              <h5> {{ product.name }} </h5>
+              <span class="product-description"> {{product.description}} </span>
+              <span class="product-price"> {{ (product.price / 100) | number_format(2)}} €</span>
+            </div>

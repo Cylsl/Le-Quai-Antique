@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes réservations - Le Quai Antique{% endblock %}
+
+{% block content %}
+
+</br>
+
+
+<h1>Mes réservations</h1>
+
+C'est dans cet espace que vous allez pouvoir gérer toutes vos réservations.
+</br>
+<a href="{{ path ('app_account') }}">Retour</a>
+
+
+
+{% if reservations|length == 0  %}
+<hr>
+  <p class="text-center">
+    Vous n'avez pas encore réservé au Quai Antique.
+  </p>
+
+{% else %}
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th scope="col">Date de réservation</th>
+      <th scope="col">Heure de réservation</th>
+      <th scope="col">Convives</th>
+      <th scope="col">Identifiant</th>
+      <th scope="col">Téléphone</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for reservation in reservations %}
+      <tr>
+        <td>{{ reservation.date | date('d/m/Y') }}</td>
+        <td>{{ reservation.time  }}</td>
+        <td>{{ reservation.guests }}</td>
+        <td>{{ reservation.lastname }}</td>
+        <td>{{ reservation.phone }}</td>
+
+      </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+
+{% endif %}
+
+ </br>
+ </br>
+ </br>
+ </br>
+ </br>
+ </br>
+ </br>
+ </br>
+ </br>
+ </br>
+ </br>
+ </br>
+ </br>
+ </br>
+
+<hr>
+
+{% endblock %}

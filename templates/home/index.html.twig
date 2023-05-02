@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block carousel%}{% endblock %}
+
+{% block content%}
+
+            <!-- Three columns of text below the carousel -->
+            <h3>Notre suggestion</h3>
+            <div class="row">
+                {% for product in products %}
+                <div class="col-md-4">
+                    {% include 'menu/single_product.html.twig' %}
+                </div>
+                {% endfor %}
+            </div><!-- /.row -->
+
+
+            <!-- START THE FEATURETTES -->
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">Retrouvez les plaisirs gustatifs de la mer <span class="text-muted">si proche de chez vous</span></h2>
+                    <p class="lead">Nos produits sont frais, en partenariat avec des producteurs locaux. Nous vous proposons trois formules en plus des plats à la carte. <br/> Le restaurant est ouvert : <br/><br/> Du mardi au dimanche <br/>De 11h30 à 15h00 <br/>Puis de 18h30 à 22h <br/><br/>Vous pouvez retrouver notre menu en cliquant juste ici <br/><br/>
+                    <a class="btn btn-info" href="{{ path ('app_menu') }}" role="button">Notre carte</a></p>
+                </div>
+                <div class="col-md-5">    
+                  <img src="uploads/images/formule/Formules.png" class="img-fluid" alt="menu">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading">Une équipe de passionnés <span class="text-muted">pour vous satisfaire</span></h2>
+                    <p class="lead">Notre équipe, chapotée par le chef Arnaud Michant, est composée de personnes respectueuses des produits frais ainsi que du savoir faire français en matière de cuisine. Nos produits arrivent tous les matins dans notre cuisine pour finir préparés avec amour dans votre assiette. </p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                  <img src="uploads/images/cuisine.jpg" class="img-fluid"  alt="cuisine">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">Dégustez nos plats <span class="text-muted">dans un havre de paix</span></h2>
+                    <p class="lead">Idéalement situé au 14 route du Molinel 29810 Ploumoguer, non loin de Brest, notre restaurant proche de la mer vous offrira un cadre rêvé pour vous ressourcer et profiter de la nature bretonne.
+                    <br/> <br/>
+                    <a class="btn btn-info" href="{{ path ('app_reservation') }}" role="button">Nous contacter</a></p></p>
+                </div>
+                <div class="col-md-5">
+                  <img src="uploads/images/resto_petit.jpg" class="resto"  alt="restaurant">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <!-- /END THE FEATURETTES -->
+{% endblock %}
