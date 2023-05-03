@@ -7,6 +7,8 @@ Pour se connecter en local
  DATABASE_URL="mysql://root@127.0.0.1:3306/quaiantique?serverVersion=mariadb-10.4.11"
  http://localhost/phpmyadmin/index.php?route=/database/structure&db=quaiantique
  
+ Pour créer un administrateur : il faut se rendre sur la page admin du site qui gérée par EasyAdmin et aller dans "Utilisateur". Ici vous avez la liste des utilisateurs, en cliquant sur les trois points et sur edit, il est possible de choisir le rôle de l'utilisateur. Soit Administrateur, soit utilisateur ou les deux.
+ 
  
  
  liste des requêtes SQL exécutées :
