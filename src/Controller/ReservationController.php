@@ -47,20 +47,6 @@ class ReservationController extends AbstractController
             }
         }
 
-        /* Récupérer la limite de réservation depuis l'entité SeuilReservation
-        $limitReservation = $this->entityManager->getRepository(LimitReservation::class)->find(1);
-        $limite = $limitReservation->getLimite();
-
-        // Compter le nombre de réservations existantes
-        $countReservations = $this->entityManager->getRepository(Reservation::class)->count([]);
-
-        // Vérifier si la limite de réservation est dépassée
-        if ($countReservations >= $limite) {
-            return $this->render('reservation/reservation_limit.html.twig', [
-                'reservation' => $reservation
-            ]);
-        } */
-
 
 
 
