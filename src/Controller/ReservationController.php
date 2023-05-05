@@ -78,7 +78,7 @@ class ReservationController extends AbstractController
                 $reservations = $this->entityManager->getRepository(Reservation::class)->findBy(['time' => $time, 'date' => $date]);
                 $reservationCount = count($reservations);
                 if ($reservationCount >= $limite) { // Exemple de seuil de réservation à 5 réservations par heure
-                    $this->addFlash('notice', 'Le nombre maximum de réservations pour cette heure a été atteint.');
+                    $this->addFlash('notice', 'Le nombre maximum de réservations pour cette heure a été atteint. Merci de sélectionner un autre créneau');
                     // Afficher le formulaire
                     return $this->render('reservation/reservation.html.twig', [
                         'form' => $form->createView(),
