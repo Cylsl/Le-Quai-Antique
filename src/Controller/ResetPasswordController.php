@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class ResetPasswordController extends AbstractController
 {
@@ -47,9 +48,13 @@ class ResetPasswordController extends AbstractController
 
                 // 2 : Envoyer un mail à l'utilisateur avec un lien permettant de mettre à jour le mdp
 
-                $url = $this->generateUrl('app_update_password', [
-                    'token' => $reset_password->getToken()
-                ]);
+                $url = $this->generateUrl(
+                    'app_update_password',
+                    [
+                        'token' => $reset_password->getToken()
+                    ],
+                    UrlGeneratorInterface::ABSOLUTE_URL
+                );
 
                 $content = "Bonjour " . $user->getFirstname() . "<br/><br/> Vous avez demandé à réinitialiser votre mot de passe sur le site Quai Antique. <br/><br/>";
                 $content .= "Merci de bien vouloir cliquer sur le lien suivant pour <a href='" . $url . "'>mettre à jour votre mot de passe</a>.";
