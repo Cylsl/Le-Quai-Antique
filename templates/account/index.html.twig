@@ -6,16 +6,37 @@
 
 <h1>Mon compte</h1>
 
+{% if is_granted('ROLE_ADMIN') %}
+ <small><a href="/admin"> Vous êtes un administrateur, accéder au back-office?</a></small> </br></br>
+{% endif %}
+
 Bienvenue {{ app.user.firstname }} dans votre compte. </br>
 C'est dans cet espace que vous allez pouvoir gérer toutes vos informations personnelles 
 
+
+
 <hr>
-{% if is_granted('ROLE_ADMIN') %}
- - <a href="/admin"> Vous êtes un administrateur, accéder au back-office?</a> </br>
-{% endif %}
- - <a href="{{ path ('app_account_password') }}"> Modifier mon mot de passe</a> </br>
- - <a href="{{ path ('app_account_allergies') }}"> Gérer mes allergies</a> </br>
- - <a href="{{ path ('app_account_reservation') }}"> Gérer mes réservations</a> </br>
+
+ <div class="row">
+    <div class="col-md-4">
+      <div class="account-item text-center">
+          <img src="{{asset ('uploads/images/securite.png')}}" alt="Modifier mon mot de passe"> </br>
+          <a href="{{ path ('app_account_password') }}"> Modifier mon mot de passe</a> </br>
+      </div>
+  </div>
+    <div class="col-md-4">
+      <div class="account-item text-center">
+          <img src="{{asset ('uploads/images/regime.png')}}" alt="Gérer mes allergies"></br>
+          <a href="{{ path ('app_account_allergies') }}"> Gérer mes allergies</a> </br>
+      </div>
+  </div>
+      <div class="col-md-4">
+      <div class="account-item text-center">
+          <img src="{{asset ('uploads/images/le-restaurant.png')}}" alt="Gérer mes réservations"></br>
+          <a href="{{ path ('app_account_reservation') }}"> Gérer mes réservations</a> </br>
+      </div>
+  </div>
+ </div>
  </br>
  </br>
  </br>
