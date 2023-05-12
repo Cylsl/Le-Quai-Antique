@@ -22,7 +22,7 @@ class ContactController extends AbstractController
             $this->addFlash('notice', 'Merci de nous avoir contacté. Notre équipe va vous répondre dans les meilleurs délais.');
 
             $contactFormData = $form->getData();
-            $content = $contactFormData['nom'] .  $contactFormData['prenom'] . ' vous a envoyé le message suivant: ' . $contactFormData['content'];
+            $content = $contactFormData['nom'] . '&nbsp;' . $contactFormData['prenom'] . '&nbsp;' . $contactFormData['email'] . '&#160; vous a envoyé le message suivant:<br><br> ' .  $contactFormData['content'];
 
 
             $mail = new Mail_contact;
